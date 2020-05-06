@@ -3,7 +3,7 @@ package src;
 import java.util.Scanner;
 
 public class ProductFactory {
-    public  Product fromConsole() {
+    public Product fromConsole() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Register product: ");
         System.out.println("Product id: \n");
@@ -16,5 +16,4 @@ public class ProductFactory {
         Product p = new Product(id, name, price);
         return p;
     }
-
 }

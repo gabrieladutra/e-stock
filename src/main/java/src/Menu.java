@@ -9,6 +9,7 @@ public class Menu {
     public void display() {
         System.out.println("Select an option: \n");
         System.out.println("1-Register a product \n");
+        System.out.println("0-Exit \n");
     }
 
     public Integer readOption() {
