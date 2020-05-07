@@ -5,7 +5,7 @@ import java.util.List;
 
 public class ProductRepository {
     private static ProductRepository repositoryInstance;
-    public List<Product> products = new ArrayList<>();
+    private List<Product> products = new ArrayList<>();
 
     private ProductRepository() {
     }
@@ -33,5 +33,10 @@ public class ProductRepository {
             }
         }
         return null;
+    }
+
+    public Integer getSize() {
+        return products.size();
+
     }
 }

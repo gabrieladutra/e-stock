@@ -8,13 +8,17 @@ public class Product {
     private String name;
     private Double price;
 
-    public Product(Integer id, String name, Double price) {
-        this.id = id;
+    public Product(String name, Double price) {
+
+        Integer newId = ProductRepository.getInstance().getSize() + 1;
+        this.id = newId;
         this.name = name;
         this.price = price;
+
     }
 
     public Integer getId() {
+
         return id;
     }
 
@@ -23,4 +27,5 @@ public class Product {
 
         return id.toString() + "-" + name + "-" + price;
     }
+
 }
