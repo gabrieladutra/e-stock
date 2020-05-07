@@ -8,7 +8,7 @@ public class main {
         Menu m = new Menu();
 
         Integer option = null;
-        ProductRepository repository = new ProductRepository();
+        ProductRepository repository = ProductRepository.getInstance();
 
 
         while (option == null || option != 0) {
@@ -35,6 +35,7 @@ public class main {
                     Integer item = m.readOption();
                     System.out.println(repository.getItem(item));
                     break;
+
             }
         }
     }
