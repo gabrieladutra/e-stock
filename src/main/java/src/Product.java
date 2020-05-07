@@ -3,6 +3,7 @@ package src;
 import java.util.Scanner;
 
 public class Product {
+
     private Integer id;
     private String name;
     private Double price;
@@ -13,8 +14,13 @@ public class Product {
         this.price = price;
     }
 
+    public Integer getId() {
+        return id;
+    }
+
     @Override
     public String toString() {
-        return id.toString() + "-" + name;
+
+        return id.toString() + "-" + name + "-" + price;
     }
 }
