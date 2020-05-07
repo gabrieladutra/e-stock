@@ -13,7 +13,9 @@ public class ProductFactory {
         System.out.println("Product price: \n");
         Double price = sc.nextDouble();
 
+
         Product p = new Product(id, name, price);
         return p;
+
     }
 }
