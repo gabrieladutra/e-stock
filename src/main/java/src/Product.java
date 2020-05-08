@@ -17,10 +17,15 @@ public class Product {
 
     }
 
+    public String getName() {
+        return name;
+    }
+
     public Integer getId() {
 
         return id;
     }
+
 
     @Override
     public String toString() {

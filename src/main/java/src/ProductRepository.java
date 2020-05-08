@@ -25,10 +25,10 @@ public class ProductRepository {
         return products;
     }
 
-    public Product getItem(Integer idItem) {
+    public Product getItem(String name) {
         for (int i = 0; i < products.size(); i++) {
             Product currentObject = products.get(i);
-            if (currentObject.getId() == idItem) {
+            if (currentObject.getName().contains(name)) {
                 return currentObject;
             }
         }

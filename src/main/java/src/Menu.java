@@ -20,4 +20,9 @@ public class Menu {
         return option;
     }
 
+    public String readString() {
+        String string = sc.nextLine();
+        return string;
+    }
+
 }
