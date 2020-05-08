@@ -30,6 +30,15 @@ public class ProductServices {
                 System.out.println(currentProduct);
             }
         }
+    }
+
+    public void deleteItem() {
+        Menu m = new Menu();
+        System.out.println("Product id: \n");
+        Integer id = m.readOption();
+        ProductRepository.getInstance().delete(id);
 
     }
+
 }
+

@@ -26,6 +26,10 @@ public class main {
                     services.displayItem();
                     break;
 
+                case 4:
+                    services.deleteItem();
+                    break;
+
             }
         }
     }

@@ -12,6 +12,7 @@ public class Menu {
         System.out.println("1-Register a product ");
         System.out.println("2- List all products ");
         System.out.println("3- Find a product ");
+        System.out.println("4- Delete a product");
 
     }
 
