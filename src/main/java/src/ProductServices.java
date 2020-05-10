@@ -1,7 +1,5 @@
 package src;
-
 import java.util.List;
-
 public class ProductServices {
 
     public void add() {
@@ -37,6 +35,16 @@ public class ProductServices {
         System.out.println("Product id: \n");
         Integer id = m.readOption();
         ProductRepository.getInstance().delete(id);
+
+    }
+
+    public void alterItem(){
+        List<Product> allProducts = ProductRepository.getInstance().getMany();
+        Menu m = new Menu();
+        System.out.println("Product id: \n");
+        Integer id = m.readOption();
+        ProductRepository.getInstance().alter(id);
+
 
     }
 

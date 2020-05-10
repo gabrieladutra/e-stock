@@ -1,8 +1,11 @@
 package src;
+import com.google.gson.Gson;
 
 import java.util.Scanner;
 
 public class ProductFactory {
+
+
     public Product fromConsole() {
         Scanner sc = new Scanner(System.in);
 
@@ -15,8 +18,11 @@ public class ProductFactory {
 
 
         Product p = new Product(name, price);
+        Gson json = new Gson();
+        String response = json.toJson(p);
         return p;
 
     }
+
 
 }

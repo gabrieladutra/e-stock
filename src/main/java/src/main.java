@@ -1,7 +1,5 @@
 package src;
 
-import java.util.List;
-
 public class main {
     public static void main(String[] args) {
 
@@ -28,6 +26,10 @@ public class main {
 
                 case 4:
                     services.deleteItem();
+                    break;
+
+                case 5:
+                    services.alterItem();
                     break;
 
             }

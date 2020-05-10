@@ -1,7 +1,4 @@
 package src;
-
-import java.util.Scanner;
-
 public class Product {
 
     private Integer id;
@@ -18,12 +15,28 @@ public class Product {
     }
 
     public String getName() {
+
         return name;
     }
 
     public Integer getId() {
 
         return id;
+    }
+
+    public Double getPrice(){
+
+        return price;
+    }
+
+    public void setName(String newName){
+
+        name = newName;
+    }
+
+    public void setPrice (Double newPrice){
+
+        price = newPrice;
     }
 
 

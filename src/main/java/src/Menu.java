@@ -13,6 +13,8 @@ public class Menu {
         System.out.println("2- List all products ");
         System.out.println("3- Find a product ");
         System.out.println("4- Delete a product");
+        System.out.println("5- Alter a product");
+
 
     }
 
@@ -24,6 +26,11 @@ public class Menu {
     public String readString() {
         String string = sc.nextLine();
         return string;
+    }
+
+    public Double readDouble() {
+         Double doubleNumber =  sc.nextDouble();
+        return doubleNumber;
     }
 
 }
