@@ -46,4 +46,7 @@ public class Product {
         return id.toString() + "-" + name + "-" + price;
     }
 
+    public Product(){
+
+    }
 }

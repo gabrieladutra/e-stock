@@ -5,6 +5,7 @@ public class ProductServices {
     public void add() {
         ProductFactory factory = new ProductFactory();
         Product product = factory.fromConsole();
+
         ProductRepository.getInstance().add(product);
     }
 

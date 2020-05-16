@@ -1,15 +1,45 @@
 package src;
 
 
-import java.util.ArrayList;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import java.io.File;
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class ProductRepository {
     private static ProductRepository repositoryInstance;
-    private List<Product> products = new ArrayList<>();
+    private List<Product> products = readProducts();
 
     private ProductRepository() {
 
+    }
+
+    public List<Product> readProducts() {
+        try {
+            ObjectMapper mapper = new ObjectMapper();
+            Product[] json = mapper.readValue(new File("allProducts.json"), Product[].class);
+            List<Product> products = Arrays.stream(json).collect(Collectors.toList());
+
+            return products;
+        } catch (Exception ex) {
+            throw new RuntimeException(ex);
+        }
+    }
+
+    public void writeProducts() {
+        try {
+            ObjectMapper mapper = new ObjectMapper();
+
+            mapper
+                    .writerWithDefaultPrettyPrinter()
+                    .writeValue(new File("allProducts.json"), products);
+
+
+        } catch (Exception ex) {
+            throw new RuntimeException(ex);
+        }
     }
 
     public static ProductRepository getInstance() {
@@ -21,6 +51,8 @@ public class ProductRepository {
 
     public void add(Product product) {
         products.add(product);
+        writeProducts();
+
     }
 
     public List<Product> getMany() {
@@ -48,6 +80,7 @@ public class ProductRepository {
             if (currentProduct.getId().equals(id))
                 products.remove(currentProduct);
         }
+        writeProducts();
     }
 
     public void alter(Integer id) {
@@ -63,13 +96,13 @@ public class ProductRepository {
 
                 System.out.println("Price" + "[" + currentProduct.getPrice() + "] = ");
                 Double price = menu.readDouble();
-                if(price > 0){
+                if (price > 0) {
                     currentProduct.setPrice(price);
                 }
             }
 
         }
-
+        writeProducts();
     }
 
 }
