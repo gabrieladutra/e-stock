@@ -1,0 +1,13 @@
+[ {
+  "id" : 1,
+  "name" : "RedBull/ te da asas",
+  "price" : 11.0
+}, {
+  "id" : 3,
+  "name" : "mesa de plastico",
+  "price" : 33.0
+}, {
+  "id" : 4,
+  "name" : "mesa de madeira",
+  "price" : 444.0
+} ]
