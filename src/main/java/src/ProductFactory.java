@@ -15,8 +15,7 @@ public class ProductFactory {
         Double price = sc.nextDouble();
 
 
-        Product p = new Product(name, price);
-        return p;
+        return new Product(name, price);
 
     }
 

@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 
 public class ProductRepository {
     private static ProductRepository repositoryInstance;
-    private List<Product> products = readProducts();
+    private final List<Product> products = readProducts();
 
     private ProductRepository() {
 
@@ -20,9 +20,8 @@ public class ProductRepository {
         try {
             ObjectMapper mapper = new ObjectMapper();
             Product[] json = mapper.readValue(new File("allProducts.json"), Product[].class);
-            List<Product> products = Arrays.stream(json).collect(Collectors.toList());
 
-            return products;
+            return Arrays.stream(json).collect(Collectors.toList());
         } catch (Exception ex) {
             throw new RuntimeException(ex);
         }
@@ -60,8 +59,7 @@ public class ProductRepository {
     }
 
     public Product getItem(String name) {
-        for (int i = 0; i < products.size(); i++) {
-            Product currentObject = products.get(i);
+        for (Product currentObject : products) {
             if (currentObject.getName().contains(name)) {
                 return currentObject;
             }
@@ -84,8 +82,7 @@ public class ProductRepository {
     }
 
     public void alter(Integer id) {
-        for (int i = 0; i < products.size(); i++) {
-            Product currentProduct = products.get(i);
+        for (Product currentProduct : products) {
             if (currentProduct.getId().equals(id)) {
                 Menu menu = new Menu();
                 System.out.println("Name" + "[" + currentProduct.getName() + "] = ");

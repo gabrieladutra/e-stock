@@ -11,8 +11,7 @@ public class ProductServices {
 
     public void list() {
         List<Product> allProducts = ProductRepository.getInstance().getMany();
-        for (int i = 0; i < allProducts.size(); i++) {
-            Product currentProduct = allProducts.get(i);
+        for (Product currentProduct : allProducts) {
             System.out.println(currentProduct);
         }
     }
@@ -23,8 +22,7 @@ public class ProductServices {
         System.out.println("Item name: \n");
         String item = m.readString();
 
-        for (int i = 0; i < allProducts.size(); i++) {
-            Product currentProduct = allProducts.get(i);
+        for (Product currentProduct : allProducts) {
             if (currentProduct.getName().contains(item)) {
                 System.out.println(currentProduct);
             }
@@ -40,7 +38,6 @@ public class ProductServices {
     }
 
     public void alterItem(){
-        List<Product> allProducts = ProductRepository.getInstance().getMany();
         Menu m = new Menu();
         System.out.println("Product id: \n");
         Integer id = m.readOption();

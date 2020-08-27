@@ -19,18 +19,15 @@ public class Menu {
     }
 
     public Integer readOption() {
-        Integer option = sc.nextInt();
-        return option;
+        return sc.nextInt();
     }
 
     public String readString() {
-        String string = sc.nextLine();
-        return string;
+        return sc.nextLine();
     }
 
     public Double readDouble() {
-         Double doubleNumber =  sc.nextDouble();
-        return doubleNumber;
+        return sc.nextDouble();
     }
 
 }

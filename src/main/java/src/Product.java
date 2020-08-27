@@ -7,8 +7,7 @@ public class Product {
 
     public Product(String name, Double price) {
 
-        Integer newId = ProductRepository.getInstance().getSize() + 1;
-        this.id = newId;
+        this.id = ProductRepository.getInstance().getSize() + 1;
         this.name = name;
         this.price = price;
 
